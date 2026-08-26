@@ -25,8 +25,8 @@
 
       <!-- Part 3: setInterval() -->
        <section>
-        <p>Counter: <span id="counterValue"></span>0</p>
-        <button onclick="startCountr()">Start</button>
+        <p>Counter: <span id="counterValue">0</span></p>
+        <button onclick="startCounter()">Start</button>
         <button onclick="stopCounter()">Stop</button>
        </section>
 
@@ -60,14 +60,10 @@
 
             // Part 3: setInterval()
 
-            //const counterValue = document.getElementById('counterValue');
-            //const startBtn = document.getElementById('startBtn');
-           // const stopBtn = document.getElementById('stopBtn');
-
             let count = 0; 
-            let timerId = null;
+            let timer = null;
 
-            function startCouner() {
+            function startCounter() {
                 if (timer !== null) {
                     clearInterval(timer);
                 }
