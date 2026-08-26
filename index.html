@@ -26,8 +26,8 @@
       <!-- Part 3: setInterval() -->
        <section>
         <p>Counter: <span id="counterValue"></span>0</p>
-        <button id="startBtn">Start</button>
-        <button id="stopBtn">Stop</button>
+        <button onclick="startCountr()">Start</button>
+        <button onclick="stopCounter()">Stop</button>
        </section>
 
        <hr>
@@ -60,26 +60,29 @@
 
             // Part 3: setInterval()
 
-            const counterValue = document.getElementById('counterValue');
-            const startBtn = document.getElementById('startBtn');
-            const stopBtn = document.getElementById('stopBtn');
+            //const counterValue = document.getElementById('counterValue');
+            //const startBtn = document.getElementById('startBtn');
+           // const stopBtn = document.getElementById('stopBtn');
 
             let count = 0; 
             let timerId = null;
 
-            startBtn.addEventListener('click', function () {
-                if (timerId !== null) return;
+            function startCouner() {
+                if (timer !== null) {
+                    clearInterval(timer);
+                }
 
-                timerId = setInterval(function () {
-                    count++;
-                    counterValue.textContent = count;
+                timer = setInterval(function () {
+                    count = count + 1;
+                    document.getElementById('counterValue').textContent = count;
                 }, 1000);
-            });
+            }
 
-            stopBtn.addEventListener('click', function () {
-                clearInterval(timerId);
-                timerId = null;
-            });
+            function stopCounter() {
+                clearInterval(timer);
+                timer = null;
+            }
+
 
             // Part 4: Callback Function
 
