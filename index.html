@@ -10,10 +10,40 @@
      <section>
     <h1 id="mainHeader">Assignment On Module - 7</h1>
     <p id="mainParagraph">Welcome to my Assignment</p>
-    <button id="changeTextButton">Change Text</button>
+    <button onclick="changeText()">Change Text</button>
      </section>
      
      <hr>
-     
+
+     <!-- Part 2: setTimeout() -->
+      <section>
+        <button id="showMsgBtn">Show Message</button>
+        <p id="setTimeoutMsg"></p>
+      </section>
+
+      <hr>
+
+      <!-- Part 3: setInterval() -->
+       <section>
+        <p>Counter: <span id="counterValue"></span>0</p>
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+       </section>
+
+       <hr>
+
+        <!-- Internal JavaScript -->
+         <script>
+            // Part 1: DOM MANIPULATION
+            
+            function changeText() {
+                const mainHeader = document.getElementById('mainHeader');
+                const mainParagraph = document.getElementById('mainParagraph');
+
+                mainHeader.textContent = 'Dom Manipulation';
+                mainParagraph.textContent = 'Dom Manipulation is very easy';
+                mainHeader.style.color = 'red';
+            }
+         </script>
 </body>
 </html>
