@@ -57,6 +57,42 @@
                     setTimeoutMsg.textContent = 'Hello! 2 seconds completed.';
                 }, 2000);
             });
+
+            // Part 3: setInterval()
+
+            const counterValue = document.getElementById('counterValue');
+            const = startBtn = document.getElementById('startBtn');
+            const = stopBtn = document.getElementById('stopBtn');
+
+            let count = 0; 
+            let timerID = null;
+
+            startBtn.addEventListener('click', function () {
+                if (timerID !== null) return;
+
+                timerID = setInterval(function () {
+                    count++;
+                    counterValue.textContent = count;
+                }, 1000);
+            });
+
+            stopBtn.addEventListener('click', function () {
+                clearInterval(timerID);
+                timerID = null;
+            });
+
+            // Part 4: Callback Function
+
+            function callbackFunction() {
+                console.log("Welcome to JavaScript");
+            }
+
+            function greet(name, callback) {
+                console.log("Hello " + name);
+                callback();
+            }
+
+            greet("Afrin", callbackFunction);
          </script>
 </body>
 </html>
