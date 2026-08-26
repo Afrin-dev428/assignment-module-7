@@ -8,7 +8,7 @@
 <body>
     <!-- Part 1: DOM MANIPULATION -->
      <section>
-    <h1 id="mainHeader">Assignment On Module - 7</h1>
+    <h1>Assignment On Module - 7</h1>
     <p id="mainParagraph">Welcome to my Assignment</p>
     <button onclick="changeText()">Change Text</button>
      </section>
@@ -37,13 +37,26 @@
             // Part 1: DOM MANIPULATION
             
             function changeText() {
-                const mainHeader = document.getElementById('mainHeader');
+                const header = document.querySelector('h1');
                 const mainParagraph = document.getElementById('mainParagraph');
 
-                mainHeader.textContent = 'Dom Manipulation';
+                header.textContent = 'Dom Manipulation';
                 mainParagraph.textContent = 'Dom Manipulation is very easy';
-                mainHeader.style.color = 'red';
+                mainParagraph.style.textAlign ='center';
+                header.style.color = 'red';
+                header.style.textAlign = 'center';
             }
+
+            //Part 2: setTimeout()
+
+            const showMsgBtn = document.getElementById('showMsgBtn');
+            const setTimeoutMsg = document.getElementById('setTimeoutMsg');
+
+            showMsgBtn.addEventListener('click', function () {
+                setTimeout(function () {
+                    setTimeoutMsg.textContent = 'Hello! 2 seconds completed.';
+                }, 2000);
+            });
          </script>
 </body>
 </html>
